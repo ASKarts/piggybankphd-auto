@@ -13,12 +13,14 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Generate script
+- name: Generate script
         run: |
-          echo "Top 3 ways students can save money today:" > script.txt
-          echo "1. Buy used textbooks" >> script.txt
-          echo "2. Share subscriptions" >> script.txt
-          echo "3. Cook instead of takeout" >> script.txt
+          cat << 'EOF' > script.txt
+          Top 3 ways students can save money today:
+          1. Buy used textbooks
+          2. Share subscriptions
+          3. Cook instead of takeout
+          EOF
 
       - name: Show script
         run: cat script.txt
